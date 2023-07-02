@@ -1,9 +1,10 @@
+package kap.newbie.basic.electronic_watch;
 import java.util.Scanner;
 
 /**
  * @author Alexandr Korovkin
  */
-public class Main {
+public class Watch {
 
     public static final String INPUT_VALUE_OF_SECONDS = "Input value of seconds:";
     public static final int SEC_IN_HOURS = 3600;
