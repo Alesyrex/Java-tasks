@@ -16,5 +16,6 @@ public class Test4 {
         b = input.nextDouble();
         c = b * a * (a + b) / (a * a);
         System.out.printf("c = %.4f", c);
+        input.close();
     }
 }

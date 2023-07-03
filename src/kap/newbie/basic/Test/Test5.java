@@ -15,5 +15,6 @@ public class Test5 {
         System.out.print("Input b: ");
         b = input.nextInt();
         System.out.println((a*a*a) > (b*b));
+        input.close();
     }
 }
