@@ -16,7 +16,7 @@ package kap.newbie.oop.test.task1;
 public class Counter {
     public static final String COUNTER_NAME = "Counter";
     public static final String OUTPUT_FORMAT = "%s : %d";
-    private String counterName;
+    private final String counterName;
     private int count;
 
     public Counter(){
@@ -56,7 +56,7 @@ public class Counter {
     public static void main(String[] args) {
         Counter honestCounter = new Counter("Honest Counter");
         Counter oddCounter = new Counter("Odd Counter");
-        for (int i = 1;i <=100;++i){
+        for (int i = 1;i <= 100;++i){
             if (i % 2 == 0) {
                 honestCounter.incrementCount();
             } else {
