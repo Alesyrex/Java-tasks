@@ -37,6 +37,7 @@ public class Main {
         for (Counter counter : counters){
             System.out.print(printFormat(counter));
         }
+        System.out.println();
     }
 
     private static String printFormat(Counter counter) {
@@ -47,13 +48,21 @@ public class Main {
         Counter gasCounter = new Counter(GAS, 10, M_2);
         Counter coldWaterCounter = new Counter(COLD_WATER, 450, M_2);
         Counter hotWaterCounter = new Counter(HOT_WATER, 150, M_2);
-        Counter electricityCounter = new Counter(ELECTRICITY,1000, KILOWATT);
 
-        CounterService service = new CounterService(gasCounter,coldWaterCounter,hotWaterCounter,electricityCounter);
+        CounterService service = new CounterService(gasCounter,coldWaterCounter,hotWaterCounter);
 
         service.incrementCount(GAS);
         service.decrementCount(HOT_WATER);
+
+        printCounters(service.getCounters());
+
+        service.addCounter(new Counter(ELECTRICITY,1000, KILOWATT));
         service.userSetCount(ELECTRICITY,1150);
+        service.decrementCount(HOT_WATER);
+
+        printCounters(service.getCounters());
+
+        service.resetCount(COLD_WATER);
 
         printCounters(service.getCounters());
     }

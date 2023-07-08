@@ -4,34 +4,51 @@ package kap.newbie.oop.test.counter_aggregation;
  * @author Alexandr Korovkin
  */
 public class CounterService {
-    private final Counter[] counters;
+    private Counter[] counters;
 
     public CounterService(Counter ...counters) {
         this.counters = counters;
     }
 
+    public void addCounter(Counter counter){
+        if (counter != null) {
+            Counter[] newCounters = new Counter[counters.length + 1];
+            newCounters[newCounters.length - 1] = counter;
+            counters = copyArray(newCounters);
+        }
+    }
+
     public void incrementCount(String counterName){
-        Counter tempCounter = getCounter(counterName);
+        Counter currentCounter = getCounter(counterName);
         int count;
-        if (tempCounter != null){
-            count = tempCounter.getCount();
-            tempCounter.setCount(++count);
+        if (currentCounter != null){
+            count = currentCounter.getCount();
+            currentCounter.setCount(++count);
         }
     }
 
     public void decrementCount(String counterName){
-        Counter tempCounter = getCounter(counterName);
+        Counter currentCounter = getCounter(counterName);
         int count;
-        if (tempCounter != null){
-            count = tempCounter.getCount();
-            tempCounter.setCount(--count);
+        if (currentCounter != null){
+            count = currentCounter.getCount();
+            currentCounter.setCount(--count);
         }
     }
 
-    public void userSetCount(String counterName, int count){
-        Counter tempCounter = getCounter(counterName);
-        if (tempCounter != null){
-            tempCounter.setCount(count);
+    public void userSetCount(String counterName, int userCount){
+        Counter currentCounter = getCounter(counterName);
+        int count;
+        if (currentCounter != null){
+            count = currentCounter.getCount();
+            currentCounter.setCount(count + userCount);
+        }
+    }
+
+    public void resetCount(String counterName) {
+        Counter currentCounter = getCounter(counterName);
+        if (currentCounter != null) {
+            currentCounter.setCount(0);
         }
     }
 
@@ -46,5 +63,12 @@ public class CounterService {
 
     public Counter[] getCounters() {
         return counters;
+    }
+
+    private Counter[] copyArray(Counter[] newCounters) {
+        for (int i = 0;i < counters.length;++i) {
+            newCounters[i] = counters[i];
+        }
+        return newCounters;
     }
 }
