@@ -1,7 +1,6 @@
 package kap.newbie.oop.test.task12;
 
 import java.util.Scanner;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * @author Alexandr Korovkin
