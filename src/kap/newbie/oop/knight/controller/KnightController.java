@@ -2,6 +2,10 @@ package kap.newbie.oop.knight.controller;
 
 import kap.newbie.oop.knight.model.Knight;
 import kap.newbie.oop.knight.model.ammunition.Ammunition;
+import kap.newbie.oop.knight.model.ammunition.Helmet;
+import kap.newbie.oop.knight.model.ammunition.Sword;
+import kap.newbie.oop.knight.view.ConsoleView;
+import kap.newbie.oop.knight.view.EquipMenuView;
 import kap.newbie.oop.knight.view.KnightStatsView;
 
 /**
@@ -16,7 +20,7 @@ public class KnightController {
     public static final int EXIT = 6;
 
     private final Knight knight;
-    private boolean bye = false;
+    private boolean bye = true;
 
     public KnightController(Knight knight) {
         this.knight = knight;
@@ -40,12 +44,14 @@ public class KnightController {
 //                searchAmmunition();
 //                break;
             case EXIT :
+                bye = false;
+                ConsoleView.closeScanner();
                 break;
-            default:
         }
     }
 
     private void printKnightStats() {
+        knight.calculateAmmunition();
         KnightStatsView.printStats(knight);
     }
 
@@ -56,7 +62,12 @@ public class KnightController {
     }
 
     private void equipAmmunition() {
-        
+
+        EquipMenuView.printEquipMenu();
+
+        Ammunition addedAmmunition = AmmunitionGenerator.getAmmunition(EquipMenuView.selectMenu());
+
+        knight.equip(addedAmmunition);
     }
 
     public boolean isBye(){

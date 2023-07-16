@@ -3,7 +3,7 @@ package kap.newbie.oop.knight.model.ammunition;
 /**
  * @author Alexandr Korovkin
  */
-public class AttackAmmunition implements Ammunition {
+public abstract class AttackAmmunition implements Ammunition {
     private final int damage;
     private final int weight;
     private final int cost;

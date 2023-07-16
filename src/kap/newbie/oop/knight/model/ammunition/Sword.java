@@ -4,7 +4,7 @@ package kap.newbie.oop.knight.model.ammunition;
  * @author Alexandr Korovkin
  */
 public class Sword extends AttackAmmunition{
-    public static final String HELMET_STRING_FORMAT = "Sword { damage = %d; weight = %d; cost = %d }";
+    public static final String HELMET_STRING_FORMAT = "%s { %s = %d; weight = %d; cost = %d }";
 
     public Sword () {
         super();
@@ -16,6 +16,8 @@ public class Sword extends AttackAmmunition{
 
     @Override
     public String toString() {
-        return String.format(HELMET_STRING_FORMAT, getDamage(), getWeight(), getCost());
+        return String.format(HELMET_STRING_FORMAT,
+                            AmmunitionType.SWORD.getTypeName(), AmmunitionType.SWORD.getFeatureParam(),
+                            getDamage(), getWeight(), getCost());
     }
 }

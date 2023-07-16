@@ -5,7 +5,7 @@ package kap.newbie.oop.knight.model.ammunition;
  */
 public class Helmet extends ProtectionAmmunition{
 
-    public static final String HELMET_STRING_FORMAT = "Helmet { protection = %d; weight = %d; cost = %d }";
+    public static final String HELMET_STRING_FORMAT = "%s { %s = %d; weight = %d; cost = %d }";
 
     public Helmet () {
         super();
@@ -17,6 +17,8 @@ public class Helmet extends ProtectionAmmunition{
 
     @Override
     public String toString() {
-        return String.format(HELMET_STRING_FORMAT, getProtection(), getWeight(), getCost());
+        return String.format(HELMET_STRING_FORMAT,
+                            AmmunitionType.HELMET.getTypeName(), AmmunitionType.HELMET.getFeatureParam(),
+                            getProtection(), getWeight(), getCost());
     }
 }
