@@ -1,16 +1,24 @@
 package kap.newbie.oop.knight.model;
 
 import kap.newbie.oop.knight.model.ammunition.Ammunition;
+import kap.newbie.oop.knight.model.ammunition.AttackAmmunition;
+import kap.newbie.oop.knight.model.ammunition.ProtectionAmmunition;
+
+import java.util.Arrays;
 
 /**
  * @author Alexandr Korovkin
  */
 public class Knight {
+    private int damage;
+    private int protection;
+    private int weight;
+    private int cost;
 
     private Ammunition[] ammunition;
 
     public Ammunition[] getAmmunition() {
-        throw new UnsupportedOperationException("You need to implement this method");
+        return ammunition;
     }
 
     public Knight() {
@@ -21,28 +29,54 @@ public class Knight {
         this.ammunition = ammunition;
     }
 
-    /**
-     * Add new ammunition element to knight
-     * @param element that should be equipped to the knight
-     */
+    public int getDamage() {
+        return damage;
+    }
+
+    public int getProtection() {
+        return protection;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
     public void equip(Ammunition element) {
-        throw new UnsupportedOperationException("You need to implement this method");
+        Ammunition[] newAmmunition = Arrays.copyOf(ammunition, ammunition.length + 1);
+        newAmmunition[ammunition.length] = element;
+        ammunition = newAmmunition;
     }
 
-    public int calculateAmmunitionWeight() {
-        throw new UnsupportedOperationException("You need to implement this method");
+    public void calculateAmmunitionWeight() {
+        for (Ammunition element : ammunition) {
+            weight += element.getWeight();
+        }
     }
 
-    public int calculateAmmunitionCost() {
-        throw new UnsupportedOperationException("You need to implement this method");
+    public void calculateAmmunitionCost() {
+        for (Ammunition element : ammunition) {
+            cost += element.getCost();
+        }
     }
 
-    public int calculateAmmunitionDamage() {
-        throw new UnsupportedOperationException("You need to implement this method");
+    public void calculateAmmunitionDamage() {
+        for (Ammunition element : ammunition) {
+            if (element instanceof AttackAmmunition) {
+                damage += ((AttackAmmunition) element).getDamage();
+            }
+        }
     }
 
-    public int calculateAmmunitionProtection() {
-        throw new UnsupportedOperationException("You need to implement this method");
+    public void calculateAmmunitionProtection() {
+        for (Ammunition element : ammunition) {
+            if (element instanceof ProtectionAmmunition) {
+                protection += ((ProtectionAmmunition) element).getProtection();
+            }
+        }
     }
 
 }

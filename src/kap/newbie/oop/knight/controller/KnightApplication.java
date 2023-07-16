@@ -26,7 +26,7 @@ public class KnightApplication {
         do {
             MainMenuView.printMenu();
             controller.selectOperationOnKnight(MainMenuView.selectMenu());
-        }while (controller.isBye);
+        }while (controller.isBye());
 
 
 
