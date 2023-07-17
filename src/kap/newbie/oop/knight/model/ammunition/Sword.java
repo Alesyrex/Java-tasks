@@ -10,8 +10,8 @@ public class Sword extends AttackAmmunition{
         super();
     }
 
-    public Sword(int damage, int weight, int cost) {
-        super(damage, weight, cost);
+    public Sword(int weight, int cost, int damage) {
+        super(weight, cost, damage);
     }
 
     @Override

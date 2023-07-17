@@ -11,8 +11,8 @@ public class Helmet extends ProtectionAmmunition{
         super();
     }
 
-    public Helmet(int protection, int weight, int cost) {
-        super(protection, weight, cost);
+    public Helmet(int weight, int cost, int protection) {
+        super(weight, cost, protection);
     }
 
     @Override

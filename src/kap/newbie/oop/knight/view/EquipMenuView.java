@@ -31,18 +31,7 @@ public class EquipMenuView {
         return parameters;
     }
 
-    public static int selectMenu(){
-        int menuItem = ConsoleView.inputData();
-        int minMenuItem = AmmunitionType.SWORD.getId();
-        int maxMenuItem = AmmunitionType.HELMET.getId();
-
-        do {
-            if (menuItem < minMenuItem || menuItem > maxMenuItem) {
-                ConsoleView.print(INCORRECT_INPUT);
-                menuItem = ConsoleView.inputData();
-            }
-        } while (menuItem < minMenuItem || menuItem > maxMenuItem);
-
-        return menuItem;
+    public static int selectEquipMenu(){
+        return ConsoleView.selectOption(AmmunitionType.SWORD.getId(), AmmunitionType.HELMET.getId());
     }
 }

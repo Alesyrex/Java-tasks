@@ -12,7 +12,7 @@ public abstract class ProtectionAmmunition implements Ammunition {
         this(0,0,0);
     }
 
-    public ProtectionAmmunition(int protection, int weight, int cost) {
+    public ProtectionAmmunition(int weight, int cost, int protection) {
         this.protection = protection;
         this.weight = weight;
         this.cost = cost;

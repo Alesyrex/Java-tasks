@@ -1,6 +1,5 @@
 package kap.newbie.oop.knight.controller;
 
-import kap.newbie.oop.knight.model.Knight;
 import kap.newbie.oop.knight.view.MainMenuView;
 
 /**
@@ -25,7 +24,7 @@ public class KnightApplication {
 
         do {
             MainMenuView.printMenu();
-            controller.selectOperationOnKnight(MainMenuView.selectMenu());
+            controller.selectOperationOnKnight(MainMenuView.selectMainMenu());
         }while (controller.isBye());
     }
 }

@@ -13,11 +13,11 @@ public class KnightStatsView {
                                                      "Ammunition protection: %d";
 
     public static void printStats(Knight knight) {
-        System.out.printf(KNIGHT_STATS_STRING, knight.getCost(), knight.getWeight(),
-                knight.getDamage(), knight.getProtection());
+        ConsoleView.print(String.format(KNIGHT_STATS_STRING, knight.getCost(), knight.getWeight(),
+                knight.getDamage(), knight.getProtection()));
     }
 
     public static void printKnightAmmunition(Ammunition ammunition){
-        System.out.println(ammunition);
+        ConsoleView.print(ammunition.toString());
     }
 }

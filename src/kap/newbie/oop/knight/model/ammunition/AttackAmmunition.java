@@ -12,7 +12,7 @@ public abstract class AttackAmmunition implements Ammunition {
         this(0,0,0);
     }
 
-    public AttackAmmunition(int damage, int weight, int cost){
+    public AttackAmmunition(int weight, int cost, int damage){
         this.damage = damage;
         this.weight = weight;
         this.cost = cost;

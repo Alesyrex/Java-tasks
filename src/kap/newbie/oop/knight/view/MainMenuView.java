@@ -12,7 +12,8 @@ public class MainMenuView {
                                         "5. Search ammunition\n" +
                                         "6. Exit\n" +
                                         "Choose option:";
-    public static final String INCORRECT_INPUT = "Incorrect input! Try again:";
+    public static final int MIN_MENU_ITEM = 1;
+    public static final int MAX_MENU_ITEM = 6;
 
     private MainMenuView(){}
 
@@ -20,16 +21,7 @@ public class MainMenuView {
         ConsoleView.print(MENU);
     }
 
-    public static int selectMenu(){
-        int menuItem = ConsoleView.inputData();
-
-        do {
-            if (menuItem < 1 || menuItem > 6) {
-                ConsoleView.print(INCORRECT_INPUT);
-                menuItem = ConsoleView.inputData();
-            }
-        } while (menuItem < 1 || menuItem > 6);
-
-        return ConsoleView.inputData();
+    public static int selectMainMenu(){
+        return ConsoleView.selectOption(MIN_MENU_ITEM, MAX_MENU_ITEM);
     }
 }

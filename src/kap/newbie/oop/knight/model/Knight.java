@@ -52,38 +52,46 @@ public class Knight {
     }
 
     public void calculateAmmunition(){
-        calculateAmmunitionWeight();
-        calculateAmmunitionCost();
-        calculateAmmunitionDamage();
-        calculateAmmunitionProtection();
+        weight = calculateAmmunitionWeight();
+        cost = calculateAmmunitionCost();
+        damage = calculateAmmunitionDamage();
+        protection = calculateAmmunitionProtection();
     }
 
-    private void calculateAmmunitionWeight() {
+    private int calculateAmmunitionWeight() {
+        int tempWeight = 0;
         for (Ammunition element : ammunition) {
-            weight += element.getWeight();
+            tempWeight += element.getWeight();
         }
+        return tempWeight;
     }
 
-    private void calculateAmmunitionCost() {
+    private int calculateAmmunitionCost() {
+        int tempCost = 0;
         for (Ammunition element : ammunition) {
-            cost += element.getCost();
+            tempCost += element.getCost();
         }
+        return tempCost;
     }
 
-    private void calculateAmmunitionDamage() {
+    private int calculateAmmunitionDamage() {
+        int tempDamage = 0;
         for (Ammunition element : ammunition) {
             if (element instanceof AttackAmmunition) {
-                damage += ((AttackAmmunition) element).getDamage();
+                tempDamage += ((AttackAmmunition) element).getDamage();
             }
         }
+        return tempDamage;
     }
 
-    private void calculateAmmunitionProtection() {
+    private int calculateAmmunitionProtection() {
+        int tempProtection = 0;
         for (Ammunition element : ammunition) {
             if (element instanceof ProtectionAmmunition) {
-                protection += ((ProtectionAmmunition) element).getProtection();
+                tempProtection += ((ProtectionAmmunition) element).getProtection();
             }
         }
+        return tempProtection;
     }
 
 }
