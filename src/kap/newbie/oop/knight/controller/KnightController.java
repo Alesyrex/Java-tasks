@@ -4,10 +4,7 @@ import kap.newbie.oop.knight.model.Knight;
 import kap.newbie.oop.knight.model.ammunition.Ammunition;
 import kap.newbie.oop.knight.model.comparator.AmmunitionCostComparator;
 import kap.newbie.oop.knight.model.comparator.AmmunitionWeightComparator;
-import kap.newbie.oop.knight.view.ConsoleView;
-import kap.newbie.oop.knight.view.EquipMenuView;
-import kap.newbie.oop.knight.view.KnightStatsView;
-import kap.newbie.oop.knight.view.SortView;
+import kap.newbie.oop.knight.view.*;
 
 import java.util.Arrays;
 
@@ -45,9 +42,9 @@ public class KnightController {
             case SORT_AMMO:
                 sortAmmunition();
                 break;
-//            case SEARCH_AMMO:
-//                searchAmmunition();
-//                break;
+            case SEARCH_AMMO:
+                searchAmmunition();
+                break;
             case EXIT :
                 bye = false;
                 ConsoleView.closeScanner();
@@ -76,12 +73,33 @@ public class KnightController {
     }
 
     private void sortAmmunition(){
-        SortView.printSortMenu();
-        int menuItem = SortView.selectSortMenu();
+        SortMenuView.printSortMenu();
+        int menuItem = SortMenuView.selectSortMenu();
         if (menuItem == 1){
             Arrays.sort(knight.getAmmunition(), costComparator);
         } else {
             Arrays.sort(knight.getAmmunition(), weightComparator);
+        }
+    }
+
+    private void searchAmmunition(){
+        SearchMenuView.printSearchMenu();
+        int menuItem = SearchMenuView.selectSearchMenu();
+        int minRageParameter = SearchMenuView.inputMinimum(menuItem);
+        int maxRageParameter = SearchMenuView.inputMaximum(menuItem);
+
+        if (menuItem == 1 ){
+            for (Ammunition ammunition : knight.getAmmunition()) {
+                if (ammunition.getCost() >= minRageParameter && ammunition.getCost() <= maxRageParameter){
+                    ConsoleView.print(ammunition.toString());
+                }
+            }
+        } else {
+            for (Ammunition ammunition : knight.getAmmunition()) {
+                if (ammunition.getWeight() >= minRageParameter && ammunition.getWeight() <= maxRageParameter){
+                    ConsoleView.print(ammunition.toString());
+                }
+            }
         }
     }
 

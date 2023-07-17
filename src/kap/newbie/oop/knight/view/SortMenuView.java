@@ -3,7 +3,7 @@ package kap.newbie.oop.knight.view;
 /**
  * @author Alexandr Korovkin
  */
-public class SortView {
+public class SortMenuView {
     public static final String SORT_OPTION = "Choose sort type:\n" +
                                              "1. Cost\n" +
                                              "2. Weight\n" +
