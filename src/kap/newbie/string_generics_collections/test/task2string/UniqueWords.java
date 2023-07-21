@@ -20,12 +20,12 @@ public class UniqueWords {
 
     public static void main(String[] args) {
         System.out.println(INPUT_MENU);
-        String line;
+        String[] stringArray;
         try(Scanner input = new Scanner(System.in)) {
-            line = input.nextLine();
+            stringArray = input.nextLine().trim()
+                                        .toLowerCase()
+                                        .split(SPACE);
         }
-        line = line.trim().toLowerCase();
-        String[] stringArray = line.split(SPACE);
         System.out.printf(OUTPUT_FORMAT, unique(stringArray));
     }
 
