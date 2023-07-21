@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 /**
  * Попробуйте нарисовать прямоугольник, используя "==" для каждой единицы длины и "||" – для каждой единицы ширины.
+ * используя StringBuilder.
  *
  * @author Alexandr Korovkin
  */
@@ -27,13 +28,13 @@ public class SquareBuilder {
 
         for (int i = 0;i < height;++i) {
             for (int j = 0; j < width; ++j) {
-                if (isaBoolean(height, i)) {
-                    if (isaBoolean(width, j)) {
+                if (isEdge(height, i)) {
+                    if (isEdge(width, j)) {
                         squareBuild.append(CORNER);
                     } else {
                         squareBuild.append(WIDTH);
                     }
-                } else if (isaBoolean(width, j)) {
+                } else if (isEdge(width, j)) {
                     squareBuild.append(HEIGHT);
                 } else {
                     squareBuild.append(INNER_SPACE);
@@ -45,7 +46,7 @@ public class SquareBuilder {
         input.close();
     }
 
-    public static boolean isaBoolean(int edge, int iterator) {
+    public static boolean isEdge(int edge, int iterator) {
         return iterator == 0 || iterator == edge - 1; // проверяет ребра ли прямоугольника это
     }
     static void print(String s) {
