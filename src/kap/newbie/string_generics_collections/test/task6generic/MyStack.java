@@ -8,7 +8,6 @@ import kap.newbie.string_generics_collections.test.task6generic.exception.Invali
  */
 public class MyStack<T> {
     private T parent;
-
     private MyStack<T> node;
     private int stackDeep;
 
