@@ -1,4 +1,4 @@
-package kap.newbie.string_generics_collections.test.task9regex1;
+package kap.newbie.string_generics_collections.test.task9regex;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,8 +15,8 @@ public class NumberPhoneValidator {
 
     private NumberPhoneValidator(){}
 
-    public static boolean isValid(String inputText) {
-        Matcher matcher = pattern.matcher(inputText);
+    public static boolean isValid(String inputNumber) {
+        Matcher matcher = pattern.matcher(inputNumber);
 
         return matcher.matches();
     }

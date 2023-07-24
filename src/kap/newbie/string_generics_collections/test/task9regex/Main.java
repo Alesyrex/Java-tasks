@@ -1,4 +1,4 @@
-package kap.newbie.string_generics_collections.test.task9regex1;
+package kap.newbie.string_generics_collections.test.task9regex;
 
 /**
  *Реализуйте boolean-метод, валидирующий входящую строку.
