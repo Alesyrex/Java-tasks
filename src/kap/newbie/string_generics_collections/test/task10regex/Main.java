@@ -1,5 +1,9 @@
 package kap.newbie.string_generics_collections.test.task10regex;
 
+import kap.newbie.string_generics_collections.test.task10regex.exception.ValidateException;
+import kap.newbie.string_generics_collections.test.task10regex.model.FullName;
+import kap.newbie.string_generics_collections.test.task10regex.service.FullNameValidator;
+
 /**
  *
  * Реализуйте метод для работы с ФИО. Входным параметром должна являться строка, содержащая русскоязычное ФИО.
@@ -11,7 +15,12 @@ package kap.newbie.string_generics_collections.test.task10regex;
  * @author Alexandr Korovkin
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ValidateException {
+        FullName myName;
+
+        myName = FullNameValidator.validateFullName("СалтыковЩедрин Михаил Евграфович");
+
+        System.out.println(myName);
 
     }
 }

@@ -4,14 +4,19 @@ package kap.newbie.string_generics_collections.test.task10regex.model;
  * @author Alexandr Korovkin
  */
 public class FullName {
+    public static final String NAME_FORMAT = "%s %s %s";
     private String firstName;
     private String secondName;
-    private String lastName;
+    private String surname;
+
+    public FullName() {
+        this("","","");
+    }
 
     public FullName(String firstName, String secondName, String lastName) {
         this.firstName = firstName;
         this.secondName = secondName;
-        this.lastName = lastName;
+        this.surname = lastName;
     }
 
     public String getFirstName() {
@@ -22,8 +27,8 @@ public class FullName {
         return secondName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getSurname() {
+        return surname;
     }
 
     public void setFirstName(String firstName) {
@@ -34,7 +39,12 @@ public class FullName {
         this.secondName = secondName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(NAME_FORMAT, secondName, firstName, surname);
     }
 }
