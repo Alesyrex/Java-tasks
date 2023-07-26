@@ -10,10 +10,10 @@ public class Car {
     private String number;
     private int issueYear;
 
-    public Car(String model, String series, Color color, String number, int issueYear) {
+    public Car(String model, String series, String color, String number, int issueYear) {
         this.model = model;
         this.series = series;
-        this.color = color;
+        this.color = Color.getColor(color);
         this.number = number;
         this.issueYear = issueYear;
     }
@@ -48,7 +48,7 @@ public class Car {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", series='" + series + '\'' +
-                ", color=" + color +
+                ", color=" + color.getColour() +
                 ", number='" + number + '\'' +
                 ", issueYear=" + issueYear +
                 '}';
@@ -62,8 +62,8 @@ public class Car {
         this.series = series;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public void setColor(String color) {
+        this.color = Color.getColor(color);
     }
 
     public void setNumber(String number) {

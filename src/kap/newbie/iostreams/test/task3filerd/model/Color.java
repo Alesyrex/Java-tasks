@@ -22,4 +22,13 @@ public enum Color {
     public String getColour() {
         return colour;
     }
+
+    public static Color getColor(String color) {
+        for (Color c : Color.values()){
+            if (c.getColour().equals(color)){
+                return c;
+            }
+        }
+        return null;
+    }
 }

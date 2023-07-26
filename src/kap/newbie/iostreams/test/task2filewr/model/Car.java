@@ -48,7 +48,7 @@ public class Car {
         return "Car{" +
                 "model='" + model + '\'' +
                 ", series='" + series + '\'' +
-                ", color=" + color +
+                ", color=" + color.getColour() +
                 ", number='" + number + '\'' +
                 ", issueYear=" + issueYear +
                 '}';

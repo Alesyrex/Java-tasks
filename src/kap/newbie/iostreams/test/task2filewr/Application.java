@@ -1,9 +1,8 @@
 package kap.newbie.iostreams.test.task2filewr;
 
-import kap.newbie.oop.test.task12.Car;
-import kap.newbie.oop.test.task12.Color;
+import kap.newbie.iostreams.test.task2filewr.model.Car;
+import kap.newbie.iostreams.test.task2filewr.model.Color;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
