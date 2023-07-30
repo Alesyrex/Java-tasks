@@ -10,7 +10,9 @@ import java.util.regex.Pattern;
  * @author Alexandr Korovkin
  */
 public class ParseCar {
-    private static final Pattern pattern = Pattern.compile("Car\\{model='(.+?)', series='(.+?)', color=(.+?), number='(.+?)', issueYear=(\\d+?)}");
+    private static final Pattern pattern = Pattern.compile("Car\\{model='(\\w+?)', series='(.+?)', color=(\\w+?), number='(\\w+?)', issueYear=(\\d+?)}");
+
+    private ParseCar() {}
 
     private static Car[] cars = new Car[0];
 
