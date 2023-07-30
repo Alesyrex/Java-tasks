@@ -1,6 +1,6 @@
-package kap.newbie.iostreams.test.task4io.var2bufos;
+package kap.newbie.iostreams.test.task4out.var2bufos;
 
-import kap.newbie.iostreams.test.task4io.model.Car;
+import kap.newbie.iostreams.test.task4out.model.Car;
 
 import java.io.BufferedOutputStream;
 import java.io.File;

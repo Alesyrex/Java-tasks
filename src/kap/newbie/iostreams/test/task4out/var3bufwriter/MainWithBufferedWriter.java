@@ -1,7 +1,8 @@
-package kap.newbie.iostreams.test.task4io.var1fwriter;
+package kap.newbie.iostreams.test.task4out.var3bufwriter;
 
-import kap.newbie.iostreams.test.task4io.model.Car;
+import kap.newbie.iostreams.test.task4out.model.Car;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +10,7 @@ import java.io.IOException;
 /**
  * @author Alexandr Korovkin
  */
-public class MainWithFileWriter {
+public class MainWithBufferedWriter {
     public static final File CAR_CATALOG = new File("./resources/iostreams/test/task4/carCatalog.txt");
 
     public static void main(String[] args) {
@@ -17,11 +18,11 @@ public class MainWithFileWriter {
 
         long before = System.currentTimeMillis();
 
-        try(FileWriter writer = new FileWriter(CAR_CATALOG)){
+        try(BufferedWriter  writer = new BufferedWriter(new FileWriter(CAR_CATALOG))) {
             for (Car car : cars){
-                writer.append(car.toString()).append("\n");
+                writer.write(car.toString() + "\n");
             }
-        }catch (IOException exception){
+        } catch (IOException exception){
             System.out.println(exception.getMessage());
         }
 
@@ -32,6 +33,6 @@ public class MainWithFileWriter {
     public static Car[] addCars() {
         return new Car[] {new Car("BMW","RS-300", "red","A434AA62",2014),
                 new Car("Audi","R-400","black","A433AA62",2015),
-                new Car("Lada","Granta","silver","A777AA62",2017)};
+                new Car("Lada","Granta","silver","A777AA62",2018)};
     }
 }

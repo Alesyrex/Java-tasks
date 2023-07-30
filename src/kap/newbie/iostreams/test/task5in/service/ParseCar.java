@@ -1,6 +1,6 @@
-package kap.newbie.iostreams.test.task4io.service;
+package kap.newbie.iostreams.test.task5in.service;
 
-import kap.newbie.iostreams.test.task3filerd.model.Car;
+import kap.newbie.iostreams.test.task5in.model.Car;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;

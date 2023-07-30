@@ -1,4 +1,4 @@
-package kap.newbie.iostreams.test.task4io.model;
+package kap.newbie.iostreams.test.task5in.model;
 
 /**
  * @author Alexandr Korovkin
