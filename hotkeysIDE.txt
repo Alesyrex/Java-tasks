@@ -1,0 +1,13 @@
+Alt + Insert  -  Генерация кода (Getters, Setters, Constructors, hashCode/equals, toString)
+Ctrl + O   -    Переопределение метода
+Ctrl + I   -    Реализация методов
+Ctrl + Alt + T   -    Поместить фрагмент кода в (if..else, try..catch, for, synchronized, etc.)
+Ctrl + Alt + L   -    Форматирование кода
+Ctrl + Alt + I   -    Авто-отступ линии
+Ctrl + Space     -    Список компонентов (класса, метода, переменной)
+Shift + F6       -    Переименовать
+Ctrl + Alt + C   -    Поместить в константу
+Ctrl + Alt + M   -    Поместить в метод
+Ctrl + Alt + V   -    Поместить в переменную
+Shift + Shift    -    Поиск по IDE
+Ctrl + Shift + /   -    Многострочное комментрирование
