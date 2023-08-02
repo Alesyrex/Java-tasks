@@ -63,11 +63,7 @@ public class MyStack<T> {
 
     private MyStack<T> stackWalk(MyStack<T> nextNode, T element) throws InvalidElementException {
         if (element.equals(nextNode.parent)){
-            MyStack<T> searchingNode = new MyStack<>();
-            searchingNode.parent = nextNode.parent;
-            searchingNode.stackDeep = nextNode.stackDeep;
-            searchingNode.node = nextNode.node;
-            return searchingNode;
+            return nextNode;
         } else if (nextNode.node != null){
             return stackWalk(nextNode.node, element);
         }
