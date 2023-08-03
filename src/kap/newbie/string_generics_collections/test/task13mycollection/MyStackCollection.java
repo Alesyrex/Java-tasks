@@ -1,6 +1,5 @@
 package kap.newbie.string_generics_collections.test.task13mycollection;
 
-import kap.newbie.string_generics_collections.test.task13mycollection.exception.InvalidElementException;
 import kap.newbie.string_generics_collections.test.task13mycollection.exception.InvalidRemoveException;
 
 import java.util.Arrays;
@@ -214,7 +213,7 @@ public class MyStackCollection<T> implements Collection<T> {
         }
     }
 
-    private class MyStackCollectionIterator implements Iterator<T>{
+    private static class MyStackCollectionIterator<T> implements Iterator<T>{
         private Node<T> current;
 
         private MyStackCollectionIterator(Node<T> current){
