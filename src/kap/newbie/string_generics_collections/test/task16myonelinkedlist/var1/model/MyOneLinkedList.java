@@ -1,4 +1,4 @@
-package kap.newbie.string_generics_collections.test.task16myonelinkedlist.model;
+package kap.newbie.string_generics_collections.test.task16myonelinkedlist.var1.model;
 
 import java.util.Iterator;
 
@@ -14,6 +14,14 @@ public class MyOneLinkedList<E> implements Iterable<E>{
         head = null;
         tile = null;
         size = 0;
+    }
+
+    public E getHead(){
+        return head.data;
+    }
+
+    public E getTile(){
+        return tile.data;
     }
 
     public boolean addFront(E data){

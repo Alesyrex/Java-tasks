@@ -1,6 +1,7 @@
 package kap.newbie.string_generics_collections.test.task16myonelinkedlist;
 
-import kap.newbie.string_generics_collections.test.task16myonelinkedlist.model.MyOneLinkedList;
+import kap.newbie.string_generics_collections.test.task16myonelinkedlist.var1.model.MyOneLinkedList;
+import kap.newbie.string_generics_collections.test.task16myonelinkedlist.var2.model.StackByMyCollection;
 
 /**
  * @author Alexandr Korovkin
@@ -48,5 +49,34 @@ public class Application {
         for(Integer i : list){
             System.out.print(i + " ");
         }
+
+        System.out.println();
+
+        StackByMyCollection<Integer> myStack = new StackByMyCollection<>(list);
+
+        myStack.push(44);
+        myStack.push(55);
+
+        System.out.println(list);
+
+        myStack.pop();
+
+        System.out.println(list);
+
+        myStack.pop();
+        myStack.pop();
+
+        System.out.println(list);
+
+        myStack.push(33);
+        myStack.push(66);
+
+        System.out.println(list);
+
+        myStack.pop();
+        myStack.pop();
+
+        System.out.println(list);
+
     }
 }
