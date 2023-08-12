@@ -1,5 +1,7 @@
 package kap.newbie.string_generics_collections.test.task17doublelinkedlist.var1;
 
+import kap.newbie.string_generics_collections.test.task16myonelinkedlist.var1.model.MyOneLinkedList;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -75,13 +77,37 @@ public class MyDoubleLinkedList<E> implements Iterable<E>{
         return false;
     }
 
+    public boolean reverse(){
+        if (size > 1){
+            tile = head;
+
+            Node<E> temp = null;
+            for (Node<E> x = head; x != null; x = x.previous){
+                temp = x.previous;
+                x.previous = x.next;
+                x.next = temp;
+            }
+            head = temp.previous;
+            return true;
+        }
+        return false;
+    }
+
+    public void deleteByHash(){
+        for (Node<E> x = head; x != null; x = x.next){
+            if (x.hashCode() % 2 == 0){
+                unlink(x);
+            }
+        }
+    }
+
     @Override
     public Iterator<E> iterator() {
         return new MyDoubleLinkedListIterator<>(head);
     }
 
     public String toString(){
-        return tile.toString();
+        return head.toString();
     }
 
     private static class Node<E>{
@@ -98,8 +124,8 @@ public class MyDoubleLinkedList<E> implements Iterable<E>{
         public String toString() {
             StringBuilder stackString = new StringBuilder();
             stackString.append("[").append(data).append(",");
-            if(previous != null) {
-                stackString.append(previous.toString()).append("]");
+            if(next != null) {
+                stackString.append(next.toString()).append("]");
             } else {
                 stackString.append("null").append("]");
             }
