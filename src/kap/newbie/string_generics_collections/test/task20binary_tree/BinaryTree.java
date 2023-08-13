@@ -7,6 +7,11 @@ public class BinaryTree<K extends Comparable<K>, V> {
     private Node<K, V> root;
     private int size;
 
+    public BinaryTree(){
+        root = null;
+        size = 0;
+    }
+
     public BinaryTree(K key, V value) {
         root = new Node<>(key, value);
         size++;
