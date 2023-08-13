@@ -22,7 +22,7 @@ public class TasksExecutor {
         }
     }
 
-    public void executeTasks() throws InterruptedException {
+    public void executeTasks() {
         for(Task task : tasks){
             System.out.println("Task " + task.getTitle() + " processing... ");
             System.out.println(task.getDescription());
