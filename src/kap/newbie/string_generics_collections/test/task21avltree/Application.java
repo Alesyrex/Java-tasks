@@ -21,7 +21,7 @@ public class Application {
         animals.insert(10, "Monkey");
 
         System.out.println("Width walk:");
-        animals.widthWalk();
+        System.out.println(animals.widthWalk());
 
         System.out.println("\n");
 

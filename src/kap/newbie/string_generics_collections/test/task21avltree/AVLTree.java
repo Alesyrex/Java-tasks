@@ -1,7 +1,5 @@
 package kap.newbie.string_generics_collections.test.task21avltree;
 
-import kap.newbie.string_generics_collections.test.task20binary_tree.BinaryTree;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -195,13 +193,14 @@ public class AVLTree<K extends Comparable<K>, V> {
         return node;
     }
 
-    public void widthWalk(){
+    public String widthWalk(){
         Deque<Node<K, V>> queue = new ArrayDeque<>();
+        StringBuilder width = new StringBuilder();
         queue.offerFirst(root);
         Node<K, V> temp;
         while (!queue.isEmpty()) {
             temp = queue.pollFirst();
-            System.out.print(temp.value + " ");
+            width.append(temp.value).append(" ");
             if (temp.left != null){
                 queue.offerLast(temp.left);
             }
@@ -209,6 +208,7 @@ public class AVLTree<K extends Comparable<K>, V> {
                 queue.offerLast(temp.right);
             }
         }
+        return width.toString().trim();
     }
 
     public String toString(){
