@@ -3,9 +3,7 @@ package kap.newbie.string_generics_collections.test.task15comparable;
 import kap.newbie.string_generics_collections.test.task15comparable.model.Car;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 
 /**
  * @author Alexandr Korovkin
