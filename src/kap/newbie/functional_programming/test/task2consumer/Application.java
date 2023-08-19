@@ -7,7 +7,6 @@ import kap.newbie.functional_programming.test.task2consumer.model.Dog;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * Знакомимся с функциональным интерфейсом Consumer.
