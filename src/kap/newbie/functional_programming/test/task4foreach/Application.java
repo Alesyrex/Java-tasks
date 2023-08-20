@@ -11,7 +11,7 @@ public class Application {
         list.forEach(System.out::print);
 
         System.out.println();
-        
+
         list.forEach(Application::print);
     }
 
