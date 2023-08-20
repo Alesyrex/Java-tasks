@@ -7,17 +7,18 @@ import kap.newbie.functional_programming.test.task5optionalcarservice.service.Ca
 import java.util.Scanner;
 
 /**
+ * Реализуйте задачу сервис поиска машин,
+ * тип возвращаемого значения в методе поиска должен быть Optional<Car>.
+ * Если ничего не найдено – верните Optional.empty().
+ *
  * @author Alexandr Korovkin
  */
 public class Application {
     public static void main(String[] args) {
         CarService carService = new CarService(initCars());
 
-        CarIdentifier desiredCarIdentifier = createCar();
-        Car foundCar = carService.findCar(desiredCarIdentifier)
-                .orElseGet(() -> new Car("AA-000-AA", 2005, "default", false));
-
-        System.out.println(foundCar);
+        carService.findCar(createCar())
+                .ifPresentOrElse(System.out::println, () -> System.out.println("Car not found"));
     }
 
     private static CarIdentifier createCar() {
