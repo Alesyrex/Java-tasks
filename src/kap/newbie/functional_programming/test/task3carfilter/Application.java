@@ -4,7 +4,6 @@ import kap.newbie.functional_programming.test.task3carfilter.model.Car;
 import kap.newbie.functional_programming.test.task3carfilter.service.CarService;
 import kap.newbie.functional_programming.test.task3carfilter.view.ConsoleView;
 import kap.newbie.functional_programming.test.task3carfilter.view.MainMenuView;
-import kap.newbie.oop.test.task5.Main;
 
 import java.util.ArrayList;
 import java.util.List;
