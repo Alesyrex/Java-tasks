@@ -58,5 +58,11 @@ public class HRMSystem {
         task = new OlderEmployeeByNameTask5();
         Map<String, Integer> olderByName = (Map<String, Integer>) task.realize(departments);
         olderByName.forEach((k,v) -> System.out.println(k + " : " + v + " years"));
+
+        System.out.println(DELIMITER);
+
+        task = new OpenVacancyPercentTask6();
+        Map<String, Double> percentOfOpenVacancy = (Map<String, Double> )task.realize(departments);
+        percentOfOpenVacancy.forEach((k,v) -> System.out.printf("%s: percent of open vacancy - %.2f%%\n", k, v));
     }
 }
