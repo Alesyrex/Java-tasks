@@ -69,5 +69,14 @@ public class HRMSystem {
 
         task = new OpenVacancyAmountTask7();
         System.out.println("Amount open vacancy in the Company: " + task.realize(departments));
+
+        System.out.println(DELIMITER);
+
+        task = new DepartmentNamesTask8();
+        System.out.println(task.realize(departments));
+
+        System.out.println(DELIMITER);
+
+        
     }
 }
