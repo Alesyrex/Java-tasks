@@ -9,6 +9,13 @@ public class Employee {
     private String position;
     private int age;
 
+    public Employee(String name, int age, boolean isMale, String position) {
+        this.name = name;
+        this.isMale = isMale;
+        this.position = position;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
@@ -39,5 +46,20 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

@@ -1,0 +1,6 @@
+name=Mila, age=25, isMale=false, position=guard;
+name=John, age=31, isMale=true, position=engineer;
+name=Karl, age=22, isMale=true, position=scientist;
+name=Mila, age=33, isMale=false, position=engineer;
+name=Jack, age=55, isMale=true, position=guard;
+name=Perry, age=41, isMale=true, position=cook;

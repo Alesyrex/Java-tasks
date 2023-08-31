@@ -10,6 +10,17 @@ public class Department {
     private List<Employee> employees;
     private int vacancyAmount;
 
+    public Department(String name, int vacancyAmount, List<Employee> employees) {
+        this.name = name;
+        this.employees = employees;
+        this.vacancyAmount = vacancyAmount;
+    }
+
+    public Department(String name, int vacancyAmount) {
+        this.name = name;
+        this.vacancyAmount = vacancyAmount;
+    }
+
     public String getName() {
         return name;
     }
@@ -32,5 +43,20 @@ public class Department {
 
     public void setVacancyAmount(int vacancyAmount) {
         this.vacancyAmount = vacancyAmount;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

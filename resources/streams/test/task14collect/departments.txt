@@ -1,0 +1,4 @@
+name=Umbrella, vacancy_amount=5;
+name=BlackMesa, vacancy_amount=15;
+name=ApertureSince, vacancy_amount=12;
+name=UAC, vacancy_amount=11;

@@ -1,0 +1,4 @@
+name=Cosmos, age=19, isMale=true, position=robot;
+name=GLaDos, age=50, isMale=false, position=AI;
+name=Chell, age=25, isMale=false, position=tester;
+name=Wheatley, age=12, isMale=true, position=fool;
