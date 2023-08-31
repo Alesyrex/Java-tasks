@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  *
  * @author Alexandr Korovkin
  */
-public class ListEmployeeTask implements TaskForHRM<List<Employee>>{
+public class ListEmployeeTask1 implements TaskForHRM<List<Employee>>{
     @Override
     public List<Employee> realize(List<Department> departments) {
         return departments.stream()

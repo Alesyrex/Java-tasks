@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  *
  * @author Alexandr Korovkin
  */
-public class DistinctEmployeeNameTask implements TaskForHRM<Set<String>>{
+public class DistinctEmployeeNameTask2 implements TaskForHRM<Set<String>>{
     @Override
     public Set<String> realize(List<Department> departments) {
         return departments.stream()
