@@ -77,6 +77,10 @@ public class HRMSystem {
 
         System.out.println(DELIMITER);
 
-        
+        task = new AmountWomanOfDepartmentTask9();
+        Map<String, Long> amountWoman = (Map<String, Long>) task.realize(departments);
+        amountWoman.forEach((k,v) -> System.out.printf("Womans in department %s: %d\n", k, v));
+
+        System.out.println(DELIMITER);
     }
 }
