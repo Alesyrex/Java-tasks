@@ -82,5 +82,14 @@ public class HRMSystem {
         amountWoman.forEach((k,v) -> System.out.printf("Womans in department %s: %d\n", k, v));
 
         System.out.println(DELIMITER);
+
+        task = new ListEmployeeByNameTask10();
+        Map<String, List<Employee>> listEmployeeByName = (Map<String, List<Employee>>)task.realize(departments);
+        listEmployeeByName.forEach((k,v) -> { System.out.println(k + ":");
+                                                v.forEach(System.out::println);});
+
+        System.out.println(DELIMITER);
+
+        
     }
 }

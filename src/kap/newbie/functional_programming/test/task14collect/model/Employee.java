@@ -4,6 +4,7 @@ package kap.newbie.functional_programming.test.task14collect.model;
  * @author Alexandr Korovkin
  */
 public class Employee {
+    public static final String EMPLOYEE_FORMAT = "name=%s, male=%s, age=%d, position=%s";
     private String name;
     private boolean isMale;
     private String position;
@@ -60,6 +61,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return super.toString();
+        String male = isMale ? "man" : "woman";
+        return String.format(EMPLOYEE_FORMAT, name, male, age, position);
     }
 }
