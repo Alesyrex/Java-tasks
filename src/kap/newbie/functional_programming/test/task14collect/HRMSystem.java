@@ -64,5 +64,10 @@ public class HRMSystem {
         task = new OpenVacancyPercentTask6();
         Map<String, Double> percentOfOpenVacancy = (Map<String, Double> )task.realize(departments);
         percentOfOpenVacancy.forEach((k,v) -> System.out.printf("%s: percent of open vacancy - %.2f%%\n", k, v));
+
+        System.out.println(DELIMITER);
+
+        task = new OpenVacancyAmountTask7();
+        System.out.println("Amount open vacancy in the Company: " + task.realize(departments));
     }
 }
