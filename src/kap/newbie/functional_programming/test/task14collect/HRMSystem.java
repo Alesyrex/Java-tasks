@@ -4,6 +4,7 @@ import kap.newbie.functional_programming.test.task14collect.model.Department;
 import kap.newbie.functional_programming.test.task14collect.model.Employee;
 import kap.newbie.functional_programming.test.task14collect.service.*;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -21,6 +22,8 @@ import java.util.Set;
  */
 public class HRMSystem {
 
+    public static final String DELIMITER = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+
     public static void main(String[] args) {
         List<Department> departments = CreateListDepartment.getDepartmentList();
 
@@ -29,19 +32,29 @@ public class HRMSystem {
         List<Employee> employeeList = (List<Employee>) task.realize(departments);
         employeeList.forEach(e -> System.out.println(e.getName() + " - " + e.getPosition()));
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(DELIMITER);
 
         task = new DistinctEmployeeNameTask2();
         Set<String> nameSet = (Set<String>) task.realize(departments);
 
         nameSet.forEach(System.out::println);
 
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(DELIMITER);
 
         task = new DistinctEmployeeNameByDepartTask3();
         Map<String, List<String>> empNameByDep = (Map<String, List<String>>) task.realize(departments);
 
         empNameByDep.forEach((s,l) -> { System.out.println(s + ":");
                                         l.forEach(System.out::println);});
+
+        System.out.println(DELIMITER);
+
+        task = new DepartmentAlphabetSortedTask4();
+        LinkedList<String> listDepSort = (LinkedList<String>) task.realize(departments);
+        listDepSort.forEach(System.out::println);
+
+        System.out.println(DELIMITER);
+
+        
     }
 }
