@@ -5,7 +5,6 @@ import kap.newbie.functional_programming.test.task14collect.model.Employee;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -19,7 +18,6 @@ public class ListEmployeeByNameTask10 implements TaskForHRM<Map<String, List<Emp
     public Map<String, List<Employee>> realize(List<Department> departments) {
         return departments.stream()
                 .flatMap(d -> d.getEmployees().stream())
-                .collect(Collectors.groupingBy(Employee::getName,
-                        Collectors.mapping(Function.identity(), Collectors.toList())));
+                .collect(Collectors.groupingBy(Employee::getName));
     }
 }

@@ -4,10 +4,7 @@ import kap.newbie.functional_programming.test.task14collect.model.Department;
 import kap.newbie.functional_programming.test.task14collect.model.Employee;
 import kap.newbie.functional_programming.test.task14collect.service.*;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  *
@@ -90,6 +87,9 @@ public class HRMSystem {
 
         System.out.println(DELIMITER);
 
-        
+        task = new ListEmployeeByAlphabetNameTask11();
+        TreeMap<String, List<Employee>> listEmployeeByNameSorted = (TreeMap<String, List<Employee>>)task.realize(departments);
+        listEmployeeByNameSorted.forEach((k,v) -> { System.out.println(k + ":");
+            v.forEach(System.out::println);});
     }
 }
