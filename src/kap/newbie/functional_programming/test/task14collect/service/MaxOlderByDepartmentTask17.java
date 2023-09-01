@@ -15,13 +15,14 @@ import java.util.stream.Collectors;
  *
  * @author Alexandr Korovkin
  */
-public class MaxOlderByDepartmentTask17 implements TaskForHRM<Map<String, Optional<Integer>>>{
+public class MaxOlderByDepartmentTask17 implements TaskForHRM<Map<String, Integer>>{
     @Override
-    public Map<String, Optional<Integer>> realize(List<Department> departments) {
+    public Map<String, Integer> realize(List<Department> departments) {
         return departments.stream()
                 .collect(Collectors.groupingBy(Department::getName,
                         Collectors.flatMapping(d -> d.getEmployees().stream(),
                                 Collectors.mapping(Employee::getAge,
-                                        Collectors.maxBy(Integer::compare)))));
+                                        Collectors.collectingAndThen(Collectors.maxBy(Integer::compare),
+                                                Optional::get)))));
     }
 }

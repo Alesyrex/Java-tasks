@@ -130,8 +130,44 @@ public class HRMSystem {
         System.out.println(DELIMITER);
 
         task = new MaxOlderByDepartmentTask17();
-        Map<String, Optional<Integer>> maxOlderByDep = (Map<String, Optional<Integer>>) task.realize(departments);
-        maxOlderByDep.forEach((k,v) -> System.out.println(k + " max years old - " + v.get() + " year"));
+        Map<String, Integer> maxOlderByDep = (Map<String, Integer>) task.realize(departments);
+        maxOlderByDep.forEach((k,v) -> System.out.println(k + " max years old - " + v + " year"));
+
+        System.out.println(DELIMITER);
+
+        task = new MaleAndFemaleListEmployeeTask18();
+        Map<Boolean, List<String>> listEmployeeByMale = (Map<Boolean, List<String>>) task.realize(departments);
+        listEmployeeByMale.forEach((k,v) -> {
+            if(k) {
+                System.out.println("Males:");
+            } else {
+                System.out.println("Females:");
+            }
+            System.out.println(String.join(", ", v));
+        });
+
+        System.out.println(DELIMITER);
+
+        task = new MaleAndFemaleListByDepartmentTask19();
+        Map<String, Map<Boolean, List<String>>> listMaleByDepart =
+                (Map<String, Map<Boolean, List<String>>>) task.realize(departments);
+        listMaleByDepart.forEach((k,v) -> {
+            System.out.println(k + ":");
+            v.forEach((b,l) -> {
+                if(b) {
+                    System.out.println("Males:");
+                } else {
+                    System.out.println("Females:");
+                }
+                System.out.println(String.join(", ", l));
+            });
+        });
+
+        System.out.println(DELIMITER);
+
+        task = new YoungerAndOlderRatioTask20();
+        Map<String, Integer> youngOlderRatio = (Map<String, Integer>) task.realize(departments);
+        youngOlderRatio.forEach((k,v) -> System.out.println(k + ": max age difference - " + v + " years"));
 
         System.out.println(DELIMITER);
 
