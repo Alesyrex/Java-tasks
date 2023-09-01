@@ -120,6 +120,11 @@ public class HRMSystem {
 
         System.out.println(DELIMITER);
 
-        
+        task = new PositionListEmployeesTask16();
+        Map<String, List<String>> listEmployeesByPosition = (Map<String, List<String>>) task.realize(departments);
+        listEmployeesByPosition.forEach((k,v) -> {
+            System.out.println(k + ": ");
+            v.forEach(System.out::println);
+        });
     }
 }
