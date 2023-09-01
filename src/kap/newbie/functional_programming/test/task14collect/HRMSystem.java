@@ -189,6 +189,12 @@ public class HRMSystem {
 
         System.out.println(DELIMITER);
 
+        task = new MaleMoreThanFemaleTask23();
+        boolean maleMoreThanFemale = (Boolean) task.realize(departments);
+        System.out.println(maleMoreThanFemale ? "Male more than Female" : "Male not more than Female");
+
+        System.out.println(DELIMITER);
+
         
     }
 }
