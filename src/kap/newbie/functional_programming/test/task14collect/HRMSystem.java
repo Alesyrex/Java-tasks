@@ -171,6 +171,16 @@ public class HRMSystem {
 
         System.out.println(DELIMITER);
 
-        
+        task = new StatisticAgeByPositionTask21();
+        Map<String, DoubleSummaryStatistics> ageStatisticsPosition =
+                (Map<String, DoubleSummaryStatistics>) task.realize(departments);
+        ageStatisticsPosition.forEach((k,v) -> {
+            System.out.println(k + ":");
+            System.out.printf("min age - %.0f\n", v.getMin());
+            System.out.printf("max age - %.0f\n", v.getMax());
+            System.out.printf("average age - %.0f\n", v.getAverage());
+        });
+
+        System.out.println(DELIMITER);
     }
 }
