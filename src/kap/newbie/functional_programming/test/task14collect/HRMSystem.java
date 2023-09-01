@@ -104,5 +104,11 @@ public class HRMSystem {
         System.out.printf("Average age of company: %.0f years\n", task.realize(departments));
 
         System.out.println(DELIMITER);
+
+        task = new AverageAgeByDepartmentTask14();
+        Map<String, Double> averageAgeByDepart = (Map<String, Double>)task.realize(departments);
+        averageAgeByDepart.forEach((k,v) -> System.out.printf("%s : average years old - %.0f years\n", k, v));
+
+        System.out.println(DELIMITER);
     }
 }
