@@ -126,5 +126,15 @@ public class HRMSystem {
             System.out.println(k + ": ");
             v.forEach(System.out::println);
         });
+
+        System.out.println(DELIMITER);
+
+        task = new MaxOlderByDepartmentTask17();
+        Map<String, Optional<Integer>> maxOlderByDep = (Map<String, Optional<Integer>>) task.realize(departments);
+        maxOlderByDep.forEach((k,v) -> System.out.println(k + " max years old - " + v.get() + " year"));
+
+        System.out.println(DELIMITER);
+
+        
     }
 }
