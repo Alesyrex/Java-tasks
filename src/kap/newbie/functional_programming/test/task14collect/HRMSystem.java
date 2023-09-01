@@ -182,5 +182,13 @@ public class HRMSystem {
         });
 
         System.out.println(DELIMITER);
+
+        task = new MaleOrFemaleWithPredicateTask22();
+        List<String> maleOrFemale = (List<String>) task.realize(departments);
+        System.out.println(String.join(", ", maleOrFemale));
+
+        System.out.println(DELIMITER);
+
+        
     }
 }
