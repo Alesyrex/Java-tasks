@@ -97,5 +97,12 @@ public class HRMSystem {
         task = new AmountEmployeesOlderAgeTask12();
         Map<String, Long> olderAgeByDepart = (Map<String, Long>)task.realize(departments);
         olderAgeByDepart.forEach((k,v) -> System.out.println(k + ", older then 50 years: " + v));
+
+        System.out.println(DELIMITER);
+
+        task = new AverageAgeByCompanyTask13();
+        System.out.printf("Average age of company: %.0f years\n", task.realize(departments));
+
+        System.out.println(DELIMITER);
     }
 }

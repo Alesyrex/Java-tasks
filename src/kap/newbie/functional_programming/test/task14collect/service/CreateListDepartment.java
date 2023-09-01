@@ -9,7 +9,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,6 +29,8 @@ public class CreateListDepartment {
             "vacancy_amount=(\\d+?);");
 
     private static final List<File> files = List.of(EMPLOYEES_1, EMPLOYEES_2, EMPLOYEES_3, EMPLOYEES_4);
+
+    private CreateListDepartment(){}
 
     public static List<Department> getDepartmentList(){
         List<Department> departments = new ArrayList<>();
