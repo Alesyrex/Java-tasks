@@ -91,5 +91,11 @@ public class HRMSystem {
         TreeMap<String, List<Employee>> listEmployeeByNameSorted = (TreeMap<String, List<Employee>>)task.realize(departments);
         listEmployeeByNameSorted.forEach((k,v) -> { System.out.println(k + ":");
             v.forEach(System.out::println);});
+
+        System.out.println(DELIMITER);
+
+        task = new AmountEmployeesOlderAgeTask12();
+        Map<String, Long> olderAgeByDepart = (Map<String, Long>)task.realize(departments);
+        olderAgeByDepart.forEach((k,v) -> System.out.println(k + ", older then 50 years: " + v));
     }
 }
