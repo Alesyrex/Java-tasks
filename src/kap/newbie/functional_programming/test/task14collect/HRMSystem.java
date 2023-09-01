@@ -195,6 +195,13 @@ public class HRMSystem {
 
         System.out.println(DELIMITER);
 
-        
+        task = new MaleOrFemaleByDepartmentTask24();
+        Map<String, Boolean> maleOrFemaleByDep = (Map<String, Boolean>) task.realize(departments);
+        maleOrFemaleByDep.forEach((k,v) -> {
+            System.out.println(k + ":");
+            System.out.println(v ? "Male more than Female" : "Male not more than Female");
+        });
+
+        System.out.println(DELIMITER);
     }
 }
