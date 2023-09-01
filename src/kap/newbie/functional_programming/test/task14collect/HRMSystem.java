@@ -110,5 +110,16 @@ public class HRMSystem {
         averageAgeByDepart.forEach((k,v) -> System.out.printf("%s : average years old - %.0f years\n", k, v));
 
         System.out.println(DELIMITER);
+
+        task = new MaleToFemaleRatioTask15();
+        Map<String, Map<Boolean, Long>> maleFemaleRatio = (Map<String, Map<Boolean, Long>>)task.realize(departments);
+        maleFemaleRatio.forEach((k,v) -> {
+            System.out.print(k + ": ");
+            v.forEach((b,l) -> System.out.print(b ? "male - " + l + "\n" : "female - " + l + " : "));
+        });
+
+        System.out.println(DELIMITER);
+
+        
     }
 }
