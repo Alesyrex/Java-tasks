@@ -67,6 +67,14 @@ public class CreateListDepartment {
         return employees;
     }
 
+    public static List<Employee> getAllEmployeesList(){
+        List<Employee> employees = new ArrayList<>();
+        for (File file : files){
+            employees.addAll(getEmployeeList(file));
+        }
+        return employees;
+    }
+
     private static String readFile(File file){
         StringBuilder inputData = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
