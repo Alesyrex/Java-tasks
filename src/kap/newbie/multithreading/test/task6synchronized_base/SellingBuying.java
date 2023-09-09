@@ -1,5 +1,12 @@
 package kap.newbie.multithreading.test.task6synchronized_base;
 
+import kap.newbie.multithreading.test.task6synchronized_base.model.Buyer;
+import kap.newbie.multithreading.test.task6synchronized_base.model.SaleBase;
+import kap.newbie.multithreading.test.task6synchronized_base.model.Supplier;
+import kap.newbie.multithreading.test.task6synchronized_base.service.*;
+
+import java.util.Scanner;
+
 /**
  * Реализуйте имитацию оптовой базы с тремя поставщиками и тремя покупателями.
  * Максимальное число хранимых товаров определите на свой вкус.
@@ -25,7 +32,42 @@ package kap.newbie.multithreading.test.task6synchronized_base;
  * @author Alexandr Korovkin
  */
 public class SellingBuying {
-    public static void main(String[] args) {
 
+    public static final String FINISH = "Finish";
+
+    public static void main(String[] args) {
+        SaleBaseHolder base = new SaleBaseHolder(new SaleBase(42, 0.25));
+
+        Thread one = new Thread(new BuyerRun(new Buyer("buyer_one"), new BuyerService(base)), "one");
+        Thread two = new Thread(new BuyerRun(new Buyer("buyer_two"), new BuyerService(base)), "two");
+        Thread three = new Thread(new BuyerRun(new Buyer("buyer_three"), new BuyerService(base)), "three");
+
+        Thread four = new Thread(
+                new SupplierRun(new Supplier("supplier_one"), new SupplierService(base)), "four");
+        Thread five = new Thread(
+                new SupplierRun(new Supplier("supplier_two"), new SupplierService(base)), "five");
+        Thread six = new Thread(
+                new SupplierRun(new Supplier("supplier_three"), new SupplierService(base)), "six");
+
+        one.start();
+        two.start();
+        three.start();
+        four.start();
+        five.start();
+        six.start();
+
+        boolean isFinished = false;
+        Scanner input = new Scanner(System.in);
+        while (!isFinished){
+            isFinished = FINISH.equals(input.nextLine());
+        }
+
+        one.interrupt();
+        two.interrupt();
+        three.interrupt();
+        four.interrupt();
+        five.interrupt();
+        six.interrupt();
+        input.close();
     }
 }
