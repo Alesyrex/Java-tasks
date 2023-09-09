@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Message {
     public static final String FINISH = "Finish";
     public static final String EMPTY = "";
-    public static final String INPUT_MESSAGE = "Input message: ";
-    public static final String SEND = "Send: ";
+    public static final String SEND_MESSAGE = "Sending message: ";
+    public static final String RECEIVER_MESSAGE = "Receiver message: ";
 
     private String message = "";
     private final Scanner input = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class Message {
                 throw new RuntimeException(e);
             }
         }
-        System.out.print(INPUT_MESSAGE);
+        System.out.print(SEND_MESSAGE);
         message = input.nextLine();
         notifyAll();
     }
@@ -36,7 +36,7 @@ public class Message {
             }
         }
         if (!message.equals(FINISH)){
-            System.out.println(SEND + message);
+            System.out.println(RECEIVER_MESSAGE + message);
             message = EMPTY;
         } else {
             input.close();
