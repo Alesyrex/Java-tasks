@@ -20,7 +20,7 @@ public class Fork {
     }
 
     public void lock(){
-        lock.unlock();
+        lock.lock();
     }
 
     public void unlock(){
