@@ -1,10 +1,9 @@
-package kap.newbie.multithreading.test.task14philosopher;
+package kap.newbie.multithreading.test.task14philosopher.var1;
 
-import kap.newbie.multithreading.test.task14philosopher.model.Fork;
-import kap.newbie.multithreading.test.task14philosopher.model.PhilosopherThread;
+import kap.newbie.multithreading.test.task14philosopher.var1.model.Fork;
+import kap.newbie.multithreading.test.task14philosopher.var1.model.PhilosopherThread;
 
 import java.util.concurrent.Semaphore;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -21,18 +20,19 @@ import java.util.stream.Stream;
  * Чтобы наесться, каждый философ должен поесть трижды.
  * еобходимо накормить философов как можно быстрее – ситуация, когда они будут есть строго по одному – недопустима.
  *
- *
+ * 1. Решите задачу об обедающих философах, используя посредника –
+ * механизм, определяющий, кто из философов может взять вилку.
  *
  * @author Alexandr Korovkin
  */
-public class FivePhilosopherTask {
-
+public class FivePhilosopherVar1 {
     public static final int PHILOSOPHERS_AMOUNT = 5;
     public static final int ACTIVE_PHILOSOPHERS = 4;
 
     public static void main(String[] args) {
         Fork[] forks = Stream.iterate(1, i -> i <= PHILOSOPHERS_AMOUNT, i -> ++i)
-                .map(Fork::new).toArray(Fork[]::new);
+                .map(Fork::new)
+                .toArray(Fork[]::new);
 
         Semaphore semaphore = new Semaphore(ACTIVE_PHILOSOPHERS);
 

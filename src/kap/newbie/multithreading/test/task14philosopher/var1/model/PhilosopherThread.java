@@ -1,4 +1,4 @@
-package kap.newbie.multithreading.test.task14philosopher.model;
+package kap.newbie.multithreading.test.task14philosopher.var1.model;
 
 import java.util.concurrent.Semaphore;
 
