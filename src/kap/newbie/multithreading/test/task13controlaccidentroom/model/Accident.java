@@ -26,7 +26,8 @@ public class Accident {
         return processed;
     }
 
-    public void processed(){
+    public void processed() {
         processed = true;
     }
 }
+

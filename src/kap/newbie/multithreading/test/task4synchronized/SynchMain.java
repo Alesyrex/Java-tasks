@@ -4,6 +4,12 @@ import kap.newbie.multithreading.test.task4synchronized.model.Car;
 import kap.newbie.multithreading.test.task4synchronized.service.CarService;
 
 /**
+ * Реализуйте сервис для работы с машинами.
+ * Предусмотрите возможность добавления, удаления машин,
+ * изменения информации о существующей машине,
+ * а также поиск по доступным машинам.
+ * Обеспечьте потокобезопасность разработанного сервиса.
+ *
  * @author Alexandr Korovkin
  */
 public class SynchMain {
