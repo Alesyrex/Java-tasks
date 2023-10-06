@@ -43,9 +43,7 @@ public class ConcurrentCarsCollections {
     }
 
     private static <T> Runnable getRunnable(T t, Consumer<T> consumer){
-        return () -> {
-            consumer.accept(t);
-        };
+        return () -> consumer.accept(t);
     }
 
     private static void startThreads(Thread... threads){
