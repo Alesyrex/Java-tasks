@@ -29,7 +29,7 @@ public class SendReceiveWithQueue {
 
         Thread receiver = new Thread(() -> {
             while (!message.getText().equals(FINISH)) {
-                System.out.println(transferMessage.receiveMessage());
+                transferMessage.receiveMessage();
             }
         });
 

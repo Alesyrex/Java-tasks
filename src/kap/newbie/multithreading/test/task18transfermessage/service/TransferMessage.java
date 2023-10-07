@@ -17,11 +17,11 @@ public class TransferMessage {
     private final Scanner scanner = new Scanner(System.in);
 
 
-    public TransferMessage(){
+    public TransferMessage() {
         this.transfer = new LinkedTransferQueue<>();
     }
 
-    public void sendMessage(Message message){
+    public void sendMessage(Message message) {
         try {
             System.out.print(SEND_MESSAGE);
             message.setText(scanner.nextLine());
@@ -32,12 +32,11 @@ public class TransferMessage {
         }
     }
 
-    public String receiveMessage(){
+    public void receiveMessage() {
         try {
-            return String.format("%s: %s", RECEIVE_MESSAGE, transfer.take().getText());
+            System.out.printf("%s: %s\n", RECEIVE_MESSAGE, transfer.take().getText());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return null;
     }
 }
