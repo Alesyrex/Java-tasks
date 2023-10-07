@@ -16,7 +16,7 @@ public class Friend implements Runnable{
 
     public Friend(CyclicBarrier barrier){
         Random random = new Random();
-        this.waiting = random.nextInt(4) + 1;
+        this.waiting = random.nextInt(5) + 1;
         this.late = random.nextInt(2) + 1;
         this.barrier = barrier;
     }
@@ -28,7 +28,6 @@ public class Friend implements Runnable{
 
             barrier.await(waiting, TimeUnit.SECONDS);
         } catch (InterruptedException | BrokenBarrierException | TimeoutException e){
-            System.out.println("interrupt");
             Thread.currentThread().interrupt();
         }
     }

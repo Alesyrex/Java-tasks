@@ -57,12 +57,14 @@ public class FriendsMeetingApplication {
     public static boolean tryMeeting(CyclicBarrier barrier) {
         System.out.println("Trying...");
 
-        IntStream.range(0,10)
+        return IntStream.range(0,10)
                 .boxed()
-                .map(i -> new Thread(new Friend(barrier)))
-                .forEach(Thread::start);
-
-        return true;
+                .map(i -> new Friend(barrier))
+                .map(Thread::new)
+                .peek(Thread::start)
+                .collect(Collectors.toList())
+                .stream()
+                .allMatch(FriendsMeetingApplication::isDone);
     }
 
     private static boolean isDone(Thread thread){
