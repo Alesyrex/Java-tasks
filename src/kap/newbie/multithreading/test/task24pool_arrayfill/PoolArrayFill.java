@@ -15,7 +15,7 @@ public class PoolArrayFill {
         System.out.println(Runtime.getRuntime().availableProcessors());
 
 //        ForkJoinPool pool = new ForkJoinPool(Runtime.getRuntime().availableProcessors());
-        ForkJoinPool pool = new ForkJoinPool(6);
+        ForkJoinPool pool = new ForkJoinPool(16);
 
         long before = System.currentTimeMillis();
 
